@@ -5,6 +5,8 @@ import numpy as np
 import copy
 import seaborn as sns
 import matplotlib.colors as colors
+from mpl_toolkits import mplot3d
+
 
 SIZE = 300  # The dimensions of the field
 OFFSPRING = 2 # Max offspring offspring when a rabbit reproduces
@@ -191,7 +193,7 @@ class Field:
 
         plt.title("Rabbits vs. Grass: GROW_RATE =" + str(GRASS_RATE))
         plt.savefig("history.png", bbox_inches='tight')
-        plt.show()
+       # plt.show()
 
     def history2(self):
 
@@ -216,7 +218,7 @@ class Field:
 
         plt.title("Rabbits vs. Grass: GROW_RATE =" + str(GRASS_RATE))
         plt.savefig("history.png", bbox_inches='tight')
-        plt.show()
+        #plt.show()
 
     def scatter_3d(self):
 
@@ -231,16 +233,18 @@ class Field:
         fig = plt.figure()
         ax = plt.axes(projection='3d')
 
-        ax.scatter_3d(x=xs, y=ys, z=zs, s=5, color=".15")
+        ax.scatter3D(xs,ys,zs, s=5, color=".15")
         ax.grid()
-        ax.xlim(0, max(xs)*1.2)
+       # ax.xlim(0, max(xs)*1.2)
 
-        ax.set_xlabel("Pygmy Rabbits")
-        ax.set_ylabel("Cottontail Rabbits")
+        ax.set_xlabel("Pygmy")
+        ax.set_ylabel("Cottontail")
         ax.set_zlabel("Grass")
-        ax.title("Pygmy vs. Cottontail vs. Grass: GROW_RATE =" + str(GRASS_RATE))
-        ax.savefig("history3d.png", bbox_inches='tight')
-        ax.show()
+        #issue with this text --> things with # in front --> delete, but left as notes
+        #ax.title("Pygmy vs. Cottontail vs. Grass: GROW_RATE =" + str(GRASS_RATE))
+        plt.savefig("history3d.png", bbox_inches='tight')
+        ax.set_title("3D Scatterplot for Pygmy, CottonTail, and Grass")
+        plt.show()
 
 
 def main():
