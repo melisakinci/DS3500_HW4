@@ -193,7 +193,7 @@ class Field:
 
         plt.title("Rabbits vs. Grass: GROW_RATE =" + str(GRASS_RATE))
         plt.savefig("history.png", bbox_inches='tight')
-       # plt.show()
+        plt.show()
 
     def history2(self):
 
@@ -218,7 +218,7 @@ class Field:
 
         plt.title("Rabbits vs. Grass: GROW_RATE =" + str(GRASS_RATE))
         plt.savefig("history.png", bbox_inches='tight')
-        #plt.show()
+        plt.show()
 
     def scatter_3d(self):
 
@@ -242,6 +242,8 @@ class Field:
         ax.set_zlabel("Grass")
         #issue with this text --> things with # in front --> delete, but left as notes
         #ax.title("Pygmy vs. Cottontail vs. Grass: GROW_RATE =" + str(GRASS_RATE))
+
+        #DO NOT DELETE PLT.SAVEFIG --> doing this so i dont have a gazillion copies
         plt.savefig("history3d.png", bbox_inches='tight')
         ax.set_title("3D Scatterplot for Pygmy, CottonTail, and Grass")
         plt.show()
